@@ -1,9 +1,13 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
 
 from polls.models import Choice, Question
+
+def bobo(request):
+	text = "<h1> Bobo is a winner!!!</h1>"
+	return HttpResponse(text)
 
 
 class IndexView(generic.ListView):

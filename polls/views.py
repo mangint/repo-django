@@ -5,10 +5,6 @@ from django.views import generic
 
 from polls.models import Choice, Question
 
-def bobo(request):
-	text = "<h1> Bobo is a winner!!!</h1>"
-	return HttpResponse(text)
-
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'

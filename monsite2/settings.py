@@ -22,7 +22,12 @@ SECRET_KEY = '46)^sn-jnhnbg_k)fr2@_)9q5p=dxb_)l4+%&3ji*d2!fmvhea'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'bobo/tpl_app')
+#    os.path.join(BASE_DIR, 'xxx')
+)
+
 
 TEMPLATE_DEBUG = True  
 
@@ -46,6 +51,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',
+    'bobo',
 )
 
 MIDDLEWARE_CLASSES = (

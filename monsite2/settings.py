@@ -28,7 +28,6 @@ TEMPLATE_DIRS = (
 #    os.path.join(BASE_DIR, 'xxx')
 )
 
-
 TEMPLATE_DEBUG = True  
 
 TEMPLATE_LOADERS = (
@@ -37,6 +36,8 @@ TEMPLATE_LOADERS = (
         'django.template.loaders.app_directories.Loader',
     )),
 )
+
+TEMPLATE_STRING_IF_INVALID = '### Variable missing here ###'
 
 ALLOWED_HOSTS = []
 

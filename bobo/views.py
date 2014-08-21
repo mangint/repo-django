@@ -3,19 +3,19 @@ from django.shortcuts import render, redirect
 from datetime import datetime
 
 # Views qui passent diférents types de paramètres
-"""
-def pass_no_param_to_my_view(request):
-	text = 'No param was passed to this view'
-	return HttpResponse(text)
-"""
 
-# tests des templates generators
+# tests des templates generators => vérifier les settings.py TEMPLATE_DIR
 def tpl_root(request):
 	return render(request, 'tpl_root.html', {'current_date': datetime.now()}) 
 
 def tpl_app(request):
 	return render(request, 'tpl_app.html', {'current_date': datetime.now()}) 
 
+def tpl_addition(request, nombre1, nombre2):
+	total = int(nombre1) + int(nombre2)
+	# retourn nombre1, nombre2 et la somme des deux 
+	# locals() est une fonction qui renvoie un dictionnaire des variable:valeurs de la view
+	return render(request, 'tpl_addition.html', locals())
 
 # tests appel de fonction view
 def chercher_fonction_dans_module_importe_views(request):
@@ -30,7 +30,7 @@ def test_aller_chercher_ma_fonction_view_avecparentheses(request):
 	text = "Appel de la fonction view: avec_parenthese"
 	return HttpResponse(text)  
 
-# tests passage de paramètre
+# tests passage de paramètres
 def pass_param_to_my_view_digit(request, param_digit):
 	text = 'Mon text et le paramètre digit: {0}'.format(param_digit) 
 	return HttpResponse(text)

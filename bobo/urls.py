@@ -9,14 +9,10 @@ et de les assigner à une url de appX.urls.py
 			=> urlpatterns = pattern('',
 					url(r'^/', views.ma_fonction),
 					url(r'^/, 'appX.views.mafonction'),   => ajoute directement le 1er paramètre passé à pattern() en début de chemin
-		(! DANGER!)	url(r'^/', views.ma_fonction.as_view()),
-	)
+		(! DANGER!)	url(r'^/', views.ma_fonction.as_view())
 			=> urlpatterns = pattern('appX.views',
-				url(r'^/', 'nom_de_ma_fonction_view'),
-	)
-
+				url(r'^/', 'nom_de_ma_fonction_view')
 """
-
 
 urlpatterns = patterns('',
 	url(r'^(\d+)/$', views.accueil_bobo_app),
@@ -24,6 +20,7 @@ urlpatterns = patterns('',
 #test sur la génération de templates
 	url(r'^tpl_app/$', views.tpl_app),
 	url(r'^tpl_root/$', views.tpl_root),
+	url(r'^tpl_app/addition/(?P<nombre1>\d+)/(?P<nombre2>\d+)$', views.tpl_addition),
 
 # 2,5 façons d'indiquer comment aller cehrcher la fonction view à aller chercher
 	url(r'^facon_chercher_fonction_dans_module_importe_views', views.chercher_fonction_dans_module_importe_views),

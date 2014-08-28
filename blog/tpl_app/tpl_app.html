@@ -1,0 +1,30 @@
+{% extends "tpl_base.html" %}
+
+{% block title%} Ma page d'accueil qui reprend BASE_DIR/templates/tpl_base/tpl_base.html {% endblock %}
+
+{% block content %} 
+
+
+<h1>Bienvenue sur mon /bobo/tpl_app/tpl_app.html</h1>
+
+<p> Bonjour, nous sommes le {{ current_date }}</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus massa non tortor. 
+       Vestibulum diam diam, posuere in viverra in, ullamcorper et libero. 
+       Donec eget libero quis risus congue imperdiet ac id lectus.
+       Nam euismod cursus arcu, et consequat libero ullamcorper sit amet.
+       Sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer  
+       sit amet diam. Vivamus imperdiet felis a enim tincidunt interdum.</p>
+<p> <a href="{% url "polls.views.vote" 2 %}"> Lien vers mon super article N° 42</a> </p>
+
+{% endblock %}
+
+<!-- Ce commentaire HTML sera visible dans le code source. -->
+{# Ce commentaire Django ne sera pas visible dans le code source. #}
+
+{% comment %}
+Ceci est une page d'exemple. Elle est composée de 3 tableaux :
+    - tableau des ventes
+    - locations
+    - retours en garantie
+{% endcomment %}

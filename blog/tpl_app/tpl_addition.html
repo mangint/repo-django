@@ -1,0 +1,14 @@
+<h1>Ma super calculatrice</h1>
+
+<p>{{ nombre1 }} + {{ nombre2 }}, ça fait <strong>{{ total }}</strong> !<br />
+
+Nous pouvons également calculer la somme dans le template : {{ nombre1|add:nombre2 }}.
+
+Nous expliquerons bientôt les structures présentes dans ce template, ne vous inquiétez pas.
+
+
+{# Nous supposons que notre vue a fourni un objet nommé article contenant les attributs titre, auteur et contenu #}
+<h2>{{ article.titre }}</h2>
+<p><em>Article publié par {{ article.auteur }}</em></p>
+
+<p>{{ article.contenu }}</p>

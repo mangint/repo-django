@@ -3,7 +3,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
 #	url(r'^bobo/', 'bobo.views.accueil_bobo'),
-	url(r'^bobo/', include('bobo.urls')),
+	url(r'^bobo/', include('blog.urls')),
 #	url(r'^bobo/param/', include('bobo.urls')),
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^admin/', include(admin.site.urls)),

@@ -21,29 +21,26 @@ SECRET_KEY = '46)^sn-jnhnbg_k)fr2@_)9q5p=dxb_)l4+%&3ji*d2!fmvhea'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-TEMPLATE_DIRS = (
+TEMPLATE_DIRS = ( 
+    BASE_DIR,
     os.path.join(BASE_DIR, 'templates'),
-    os.path.join(BASE_DIR, 'bobo/tpl_app')
-#    os.path.join(BASE_DIR, 'xxx')
+    os.path.join(BASE_DIR, 'blogs/tpl_app'),
+    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'templates/tpl_base')
+#    os.path.join(BASE_DIR, 'xxx/yyy')
 )
-
 TEMPLATE_DEBUG = True  
-
 TEMPLATE_LOADERS = (
     ('django.template.loaders.cached.Loader', (
         'django.template.loaders.filesystem.Loader',
         'django.template.loaders.app_directories.Loader',
     )),
 )
-
 TEMPLATE_STRING_IF_INVALID = '### Variable missing here ###'
-
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,9 +49,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',
-    'bobo',
+    'blog',
 )
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,9 +60,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
 ROOT_URLCONF = 'monsite2.urls'
-
 WSGI_APPLICATION = 'monsite2.wsgi.application'
 
 
@@ -84,19 +78,15 @@ DATABASES = {
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-
-
 TIME_ZONE = 'Europe/Paris'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
-
-STATIC_URL = '/static/'
+STATIC_URL = '/assets/'
+STATICFILES_DIRS = (
+    "/Projects/test/test1/monsite2/assets/",
+)

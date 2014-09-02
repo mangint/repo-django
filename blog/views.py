@@ -1,7 +1,21 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect
 from datetime import datetime
+from blog.models import Article
 
+
+# view qui renvoie des données de la BDD:
+def url_view_bdd_tpl(request):
+	""" Afficher tous les articles de notre blog """
+	articles = Article.objects.all() # Nous sélectionnons tous nos articles
+	return render(request, 'tpl_url_view_bdd_tpl.html', {'derniers_articles':articles})
+
+def url_id_view_bdd_tpl(request, id):
+	try:
+		article = Article.objects.get(id=id)
+	except Article.DoesNotExist:
+		raise Http404
+	return render(request, 'tpl_url_id_view_bdd_tpl.html', {'article':article})
 # Views qui passent diférents types de paramètres
 
 # tests des templates generators => vérifier les settings.py TEMPLATE_DIR

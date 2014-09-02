@@ -24,7 +24,7 @@ DEBUG = True
 TEMPLATE_DIRS = ( 
     BASE_DIR,
     os.path.join(BASE_DIR, 'templates'),
-    os.path.join(BASE_DIR, 'blogs/tpl_app'),
+    os.path.join(BASE_DIR, 'blog/tpl_app'),
     os.path.join(BASE_DIR, 'templates'),
     os.path.join(BASE_DIR, 'templates/tpl_base')
 #    os.path.join(BASE_DIR, 'xxx/yyy')

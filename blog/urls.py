@@ -19,6 +19,10 @@ et de les assigner à une url de appX.urls.py
 urlpatterns = patterns('',
 	url(r'^(\d+)/$', views.accueil_bobo_app),
 
+# test sur le renvoi de données de la BDD dans le template
+	url(r'^url_view_bdd_tpl/$', views.url_view_bdd_tpl),
+	url(r'^url_view_bdd_tpl/(?P<id>\d+)$', views.url_id_view_bdd_tpl),
+
 #test sur la génération de templates
 	url(r'^tpl_app/$', views.tpl_app),
 	url(r'^tpl_root/$', views.tpl_root),

@@ -18,6 +18,7 @@ et de les assigner à une url de appX.urls.py
 
 urlpatterns = patterns('',
 	url(r'^(\d+)/$', views.accueil_bobo_app),
+	url(r'^contact/$', views.contact),
 
 # test sur le renvoi de données de la BDD dans le template
 	url(r'^url_view_bdd_tpl/$', views.url_view_bdd_tpl),

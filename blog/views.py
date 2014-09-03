@@ -2,7 +2,35 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect
 from datetime import datetime
 from blog.models import Article
+from blog.forms import ContactForm
 
+
+def article_form(request):
+	if request.method == 'POST':
+		form = ArticleForm(request, POST)
+		if form.is_valid():
+			form.save()
+	
+	return render(request, 'blog/tpl_app/tpl_article_form.html' , locals())
+
+
+
+def contact(request):
+	if request.method =='POST':
+		form = ContactForm(request,POST)
+
+		if form.is_valid():
+			sujet = forms.cleaned_data['sujet']
+			message = forms.cleaned_data['message']
+			envoyeur = forms.cleaned_data['emvoyeur']
+			renvoi = forms.cleaned_data['renvoi']
+
+			envoi = True
+
+	else:
+		form = ContactForm
+
+	return render(request, 'blog/tpl_app/tpl_contact_form.html', locals())
 
 # view qui renvoie des données de la BDD:
 def url_view_bdd_tpl(request):

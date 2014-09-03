@@ -1,6 +1,15 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 
+
+class Contact(models.Model):
+	nom = models.CharField(max_length = 255)
+	adresse = models.TextFiled()
+	photo = models.ImageField(upload_to = 'photo/')
+
+	def __str__(self):
+		return self.nom
+
 # Exemple de ForeignKey
 
 class Categorie(models.Model):
